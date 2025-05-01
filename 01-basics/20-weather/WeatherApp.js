@@ -21,10 +21,13 @@ function isDayTime(dt, sunrise, sunset) {
 
 function convertKelvinToCelsius(kelvin) {
   if (typeof kelvin !== 'number' || isNaN(kelvin)) {
-    return null
+    return null;
   }
+
+  const celsius = kelvin - 273.15;
   
-  return +(kelvin - 273.15).toFixed(2);
+  const formatted = Number(celsius.toFixed(1)).toString();
+  return formatted.includes('.') ? formatted : formatted + '.0';
 }
 
 function convertPressureToMmHg(pressure) {
