@@ -88,7 +88,7 @@ export default defineComponent({
           <div class="weather-conditions">
             <div 
               class="weather-conditions__icon" 
-              title="{{ card.current.weather.description ?? 'Неизвестно' }}"
+              :title="card.current.weather.description ?? 'Неизвестно'"
             >
               {{ card.current.weather.id && weatherConditionIcons[card.current.weather.id] ? weatherConditionIcons[card.current.weather.id] : '❓' }}
             </div>
