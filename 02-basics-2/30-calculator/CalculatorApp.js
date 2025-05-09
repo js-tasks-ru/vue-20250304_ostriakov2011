@@ -11,10 +11,10 @@ export default defineComponent({
 
     const result = computed(() => {
       switch (operator.value) {
-        case 'sum': return firstOperand.value + secondOperand.value; break;
-        case 'subtract': return firstOperand.value - secondOperand.value; break;
-        case 'multiply': return firstOperand.value * secondOperand.value; break;
-        case 'divide': return firstOperand.value / secondOperand.value; break;
+        case 'sum': return firstOperand.value + secondOperand.value;
+        case 'subtract': return firstOperand.value - secondOperand.value;
+        case 'multiply': return firstOperand.value * secondOperand.value;
+        case 'divide': return firstOperand.value / secondOperand.value;
         default: return 0;
       }
     })

@@ -1,4 +1,4 @@
-import { defineComponent, ref, watch, computed } from 'vue'
+import { defineComponent, ref, computed } from 'vue'
 
 export default defineComponent({
   name: 'MapApp',
