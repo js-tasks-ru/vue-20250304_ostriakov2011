@@ -53,14 +53,14 @@ export default defineComponent({
       }))
     })
 
-    function removeEmailByIndex(index) {
+    function handleRemove(index) {
       emails.value.splice(index, 1)
     }
 
     return {
       query,
       markedEmails,
-      removeEmailByIndex,
+      handleRemove,
     }
   },
 
