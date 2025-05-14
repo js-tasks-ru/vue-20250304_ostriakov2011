@@ -9,15 +9,37 @@ export default defineComponent({
     UiButton,
   },
 
+  props: {
+    min: {
+      type: Number,
+      default: 0,
+    },
+
+    max: {
+      type: Number,
+      default: Infinity,
+    },
+
+    count: {
+      type: Number,
+      default: 0,
+    },
+  },
+
+  emits: ['update:count'],
+
   setup() {
     // Рекомендуется для практики реализовать обработку событий внутри setup, а не непосредственно в шаблоне
   },
 
   template: `
     <div class="counter">
-      <UiButton aria-label="Decrement" disabled>➖</UiButton>
-      <span class="count" data-testid="count">3</span>
-      <UiButton aria-label="Increment">➕</UiButton>
+      <UiButton aria-label="Decrement" :disabled="count <= min" @click.stop="$emit('update:count', count - 1)">➖</UiButton>
+      <span class="count" data-testid="count">{{ count }}</span>
+      <UiButton 
+      aria-label="Increment"
+      :disabled="count >= max"
+      @click.stop="$emit('update:count', count + 1)">➕</UiButton>
     </div>
   `,
 })
